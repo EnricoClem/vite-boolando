@@ -1,0 +1,13 @@
+.row {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+.between {
+    justify-content: space-between;
+}
+
+[class*="container"] {
+    max-width: 1200px;
+    margin: 0 auto;
+}

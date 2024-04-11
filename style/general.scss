@@ -1,3 +1,7 @@
-@use '.partials/reset';
-@use '.partials/variables';
-@use '.partials/layout';
+@use './partials/reset' as *;
+@use './partials/variables' as *;
+@use './partials/layout' as *;
+
+header {
+    background-color: $brand-color;
+  }

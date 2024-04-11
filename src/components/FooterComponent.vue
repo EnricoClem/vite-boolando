@@ -50,4 +50,25 @@ export default {
 
 <style>
 
+footer :is(a, li, h3, h4) {
+    color: white;
+}
+
+footer li {
+    display: inline;
+    margin-right: 5px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    width: 100%;
+    margin-top: auto;
+}
+
+.row.foot {
+    padding: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
 </style>

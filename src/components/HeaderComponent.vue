@@ -6,7 +6,7 @@ export default {
 
 <template>
     <header>
-        <div class="container-header">
+        <div class="container">
             <div class="row head">
                 <!-- Tasti tipologia -->
                 <ul>
@@ -42,5 +42,31 @@ export default {
 </template>
 
 <style>
+
+header a  {
+    color: white;
+}
+
+header li {
+    display: inline;
+    margin-right: 5px;
+}
+
+header {
+    background-color: #ff6800;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+}
+
+.row.head {
+    padding: 20px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-header {
+    width: 130px;
+}
 
 </style>
