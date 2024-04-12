@@ -3,59 +3,84 @@ export default {
   data() {
     return {
         items: [{
-            name: 'Levis',
-            brand: 'RELAXED FIT TEE UNISEX',
-            price: '29,99 €',
-            promo: '-50%',
-            eco: 'Sostenibilità',
-            newPrice: '14,99 €',
-            imgCover: '/imgs/1.webp',
-            imgHover: '/imgs/1b.webp'
+            "name": 'Levis',
+            "brand": 'RELAXED FIT TEE UNISEX',
+            "price": '29,99 €',
+            "newPrice": '14,99 €',
+            "imgCover": '/imgs/1.webp',
+            "imgHover": '/imgs/1b.webp',
+            "badges": [
+                {
+                    "type": "eco",
+                    "value":"Sostenibilità"
+                }, {
+                    "type": "promo",
+                    "value":"-50%"
+                }
+            ]
         }, {
-            name: 'Guess',
-            brand: 'ROSES TEE',
-            price: '29,99 €',
-            promo: '-30%',
-            eco: '',
-            newPrice: '20,99 €',
-            imgCover: '/imgs/2.webp',
-            imgHover: '/imgs/2b.webp'
+            "name": 'Guess',
+            "brand": 'ROSES TEE',
+            "price": '29,99 €',
+            "newPrice": '20,99 €',
+            "imgCover": '/imgs/2.webp',
+            "imgHover": '/imgs/2b.webp',
+            "badges": [
+                {
+                    "type": "promo",
+                    "value":"-30%"
+                }
+            ]
         }, {
-            name: 'Come zuccher filato',
-            brand: 'VOGLIA DI COLORI PASTELLO',
-            price: '129,99 €',
-            promo: '-30%',
-            eco: '',
-            newPrice: '184,99 €',
-            imgCover: '/imgs/3.webp',
-            imgHover: '/imgs/3b.webp'
+            "name": 'Come zuccher filato',
+            "brand": 'VOGLIA DI COLORI PASTELLO',
+            "price": '129,99 €',
+            "newPrice": '184,99 €',
+            "imgCover": '/imgs/3.webp',
+            "imgHover": '/imgs/3b.webp',
+            "badges": [
+                {
+                    "type": "promo",
+                    "value":"-30%"
+                }
+            ]
         }, {
-            name: 'Levis',
-            brand: 'TEE UNISEX',
-            price: '29,99 €',
-            promo: '-50%',
-            eco: 'Sostenibilità',
-            newPrice: '14,99 €',
-            imgCover: '/imgs/4.webp',
-            imgHover: '/imgs/4b.webp'
+            "name": 'Levis',
+            "brand": 'TEE UNISEX',
+            "price": '29,99 €',
+            "newPrice": '14,99 €',
+            "imgCover": '/imgs/4.webp',
+            "imgHover": '/imgs/4b.webp',
+            "badges": [
+                {
+                    "type": "eco",
+                    "value":"Sostenibilità"
+                }, {
+                    "type": "promo",
+                    "value":"-50%"
+                }
+            ]
         }, {
-            name: 'Maya Deluxe',
-            brand: 'STRIPE BODICE',
-            price: '14,99 €',
-            promo: '',
-            eco: '',
-            newPrice: '',
-            imgCover: '/imgs/5.webp',
-            imgHover: '/imgs/5b.webp'
+            "name": 'Maya Deluxe',
+            "brand": 'STRIPE BODICE',
+            "price": '14,99 €',
+            "newPrice": '',
+            "imgCover": '/imgs/5.webp',
+            "imgHover": '/imgs/5b.webp',
+            "badges": []
         }, {
-            name: 'Esprit',
-            brand: 'MAGLIONE BLACK',
-            price: '14,99 €',
-            promo: '',
-            eco: 'Sostenibilità',
-            newPrice: '',
-            imgCover: '/imgs/6.webp',
-            imgHover: '/imgs/6b.webp'
+            "name": 'Esprit',
+            "brand": 'MAGLIONE BLACK',
+            "price": '14,99 €',
+            "newPrice": '',
+            "imgCover": '/imgs/6.webp',
+            "imgHover": '/imgs/6b.webp',
+            "badges": [
+                {
+                    "type": "eco",
+                    "value":"Sostenibilità"
+                }
+            ]
         }]
     }
   }
@@ -83,14 +108,13 @@ export default {
                     <p class="heart">&hearts;</p>
                     <p class="heart-hover">&hearts;</p>
                     <!-- Tab promozionali -->
-                    <div class="info-sale">
-                        <div class="tab-promo">
-                            <h4>{{ item.promo }}</h4>
-                        </div>
-                        <div class="tab-eco">
-                            <h4>{{ item.eco }}</h4>
-                        </div>                        
-                    </div>
+                    <ul class="info-sale">
+                        <li v-for="(badge,i) in item.badges" :key="i"
+                        :class="`${badge.type}`"
+                        class="badge promo">
+                            <h4>{{ badge.value }}</h4>
+                        </li>                   
+                    </ul>
                 </li>
             </ul>
         </section>
@@ -147,17 +171,17 @@ main .row {
     bottom: 100px;
 }
 
-[class^="tab"] {
+.badge {
     padding: 8px;
     color: white;
     display: inline-block;
 }
 
-.tab-promo {
+.badge.promo {
     background-color: red;
 }
 
-.tab-eco {
+.badge.eco {
     background-color: green;
 }
 
