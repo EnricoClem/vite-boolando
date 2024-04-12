@@ -9,7 +9,7 @@ export default {
             promo: '-50%',
             eco: 'Sostenibilità',
             newPrice: '14,99 €',
-            imgCover: '/imgs/1a.webp',
+            imgCover: '/imgs/1.webp',
             imgHover: '/imgs/1b.webp'
         }, {
             name: 'Guess',
@@ -18,7 +18,7 @@ export default {
             promo: '-30%',
             eco: '',
             newPrice: '20,99 €',
-            imgCover: '/imgs/2a.webp',
+            imgCover: '/imgs/2.webp',
             imgHover: '/imgs/2b.webp'
         }, {
             name: 'Come zuccher filato',
@@ -27,7 +27,7 @@ export default {
             promo: '-30%',
             eco: '',
             newPrice: '184,99 €',
-            imgCover: '/imgs/3a.webp',
+            imgCover: '/imgs/3.webp',
             imgHover: '/imgs/3b.webp'
         }, {
             name: 'Levis',
@@ -36,7 +36,7 @@ export default {
             promo: '-50%',
             eco: 'Sostenibilità',
             newPrice: '14,99 €',
-            imgCover: '/imgs/4a.webp',
+            imgCover: '/imgs/4.webp',
             imgHover: '/imgs/4b.webp'
         }, {
             name: 'Maya Deluxe',
@@ -45,7 +45,7 @@ export default {
             promo: '',
             eco: '',
             newPrice: '',
-            imgCover: '/imgs/5a.webp',
+            imgCover: '/imgs/5.webp',
             imgHover: '/imgs/5b.webp'
         }, {
             name: 'Esprit',
@@ -54,7 +54,7 @@ export default {
             promo: '',
             eco: 'Sostenibilità',
             newPrice: '',
-            imgCover: '/imgs/6a.webp',
+            imgCover: '/imgs/6.webp',
             imgHover: '/imgs/6b.webp'
         }]
     }
@@ -97,7 +97,7 @@ export default {
     </main>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 @use './style/partials/reset' as *;
 @use './style/partials/variables' as *;
@@ -108,10 +108,12 @@ export default {
 }
 main .row {
     justify-content: space-between;
+    gap: 30px;
+    padding: 20px;
 }
 
 .item {
-    width: 32.5%;
+    width: 31.5%;
     margin-bottom: 15px;
     position: relative;
 }
